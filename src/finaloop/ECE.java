@@ -3,7 +3,72 @@ package finaloop;
 import java.util.Scanner;
 
 public class ECE {
+    public static String getBreadboardLearnings() {
+        return """
+               A breadboard is a solderless tool utilized for constructing 
+               and evaluating electronic circuits, offering a hassle-free means 
+               to prototype without soldering. Typically, it features a grid of 
+               interconnected holes into which components and wires can be inserted.""";
+    }
     
+    public static String getResistorLearnings() {
+        return """
+               Resistors are electronic components designed to impede the flow of 
+               electric current within a circuit, measured in ohms (\u03a9).""";
+    }
+    
+    public static String getCapacitorLearnings() {
+        return  """
+                Capacitors, on the other hand, store and discharge electrical
+                energy, quantified in farads (F).Capacitors, on the other hand, store and discharge electrical 
+                """;
+    }
+    
+    public static String getTransistorLearnings() {
+        return """
+               Transistors, semiconductor devices pivotal in electronics, 
+               serve to amplify or switch electronic signals and power, with 
+               PNP and NPN being the two primary types.  PNP transistors 
+               consist of an N-type semiconductor layer between two layers of 
+               P-type semiconductor, whereas NPN transistors feature a P-type 
+               layer sandwiched between two N-type layers, resulting in distinct 
+               operational behaviors depending on their configurations and biasing. 
+               These components play multifaceted roles in electronic circuits, 
+               capable of signal amplification, voltage regulation, and acting as switches.""";
+    }
+    
+    public static String getDiodesLearnings() {
+        return """
+               Diodes, semiconductor devices crucial in electronics, permit current 
+               to flow in only one direction, finding widespread use in rectification, 
+               """;
+    }
+    
+    public static String getjumperWiresLearning() {
+        return """
+               Jumper wires, flexible connectors used in electronic circuits, 
+               facilitate temporary electrical connections on breadboards or between 
+               components without soldering. They offer a convenient means to create 
+               connections across different points on a breadboard or circuit board, 
+               aiding in rapid circuit prototyping.""";
+    }
+    
+    public static String getInductorLearnings() {
+        return """
+               Inductors are electronic components that store energy in the form of 
+               a magnetic field when current passes through them, quantified in henries 
+               (H). As essential elements in electrical circuits, inductors are particularly 
+               useful in applications requiring energy storage, filtering, or inductive 
+               coupling.""";
+    }
+    
+    public static String getCalculateVoltage() {
+        return """
+               Formula for voltage in parallel circuits:
+               Veq = V1 = V2 = V3 = \u2026
+               """;
+    }
+
     public static void LessonsInECE(){
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
@@ -162,7 +227,7 @@ public class ECE {
                          + "within a parallel circuit equals the aggregate of currents flowing through individual \n"
                          + "components. Moreover, the total resistance in a parallel circuit is lower than that of \n"
                          + "any individual component due to the combined pathways for current flow.");
-        
+    
         System.out.println("\nCircuit design for Parallel Circuits:");
         System.out.println(" ---------------------------------\n"
                          + " |        |           |          |\n"
