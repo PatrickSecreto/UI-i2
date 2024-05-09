@@ -30,10 +30,16 @@ public class multiplyMatrix {
     private TextField[][] matrixB;
 
     @FXML
-    private TextField matrixRow;
+    private TextField matrixRowA;
     
     @FXML
-    private TextField matrixColumn;
+    private TextField matrixColumnA;
+    
+    @FXML
+    private TextField matrixRowB;
+    
+    @FXML
+    private TextField matrixColumnB;
 
     @FXML
     private GridPane matrixAGridPane;
@@ -46,39 +52,49 @@ public class multiplyMatrix {
     
     @FXML
     private void getMatrices() {
-        try {
-            int rows = Integer.parseInt(matrixRow.getText());
-            int columns = Integer.parseInt(matrixColumn.getText());
-            
-            // Clear previous matrix input
-            matrixAGridPane.getChildren().clear();
-            matrixBGridPane.getChildren().clear();
+        while (true){
+            try {
+                int rowsA = Integer.parseInt(matrixRowA.getText());
+                int columnsA = Integer.parseInt(matrixColumnA.getText());
 
-            // Create TextFields for matrix A
-            matrixA = new TextField[rows][columns];
-            for (int row = 0; row < rows; row++) {
-                for (int col = 0; col < columns; col++) {
-                    TextField textField = new TextField();
-                    textField.setPromptText("Matrix A[" + row + "][" + col + "]");
-                    matrixAGridPane.add(textField, col, row);
-                    matrixA[row][col] = textField;
+                int rowsB = Integer.parseInt(matrixRowB.getText());
+                int columnsB = Integer.parseInt(matrixColumnB.getText());
+
+                if (columnsA != rowsB){
+                    resultLabel.setText("Error: Incompatible tables");
+                    break;
                 }
-            }
 
-            // Create TextFields for matrix B
-            matrixB = new TextField[rows][columns];
-            for (int row = 0; row < rows; row++) {
-                for (int col = 0; col < columns; col++) {
-                    TextField textField = new TextField();
-                    textField.setPromptText("Matrix B[" + row + "][" + col + "]");
-                    matrixBGridPane.add(textField, col, row);
-                    matrixB[row][col] = textField;
+                // Clear previous matrix input
+                matrixAGridPane.getChildren().clear();
+                matrixBGridPane.getChildren().clear();
+
+                // Create TextFields for matrix A
+                matrixA = new TextField[rowsA][columnsA];
+                for (int row = 0; row < rowsA; row++) {
+                    for (int col = 0; col < columnsA; col++) {
+                        TextField textField = new TextField();
+                        textField.setPromptText("Matrix A[" + row + "][" + col + "]");
+                        matrixAGridPane.add(textField, col, row);
+                        matrixA[row][col] = textField;
+                    }
                 }
-            }
 
-        } 
-        catch (NumberFormatException e) {
-            resultLabel.setText("Error: Invalid input");
+                // Create TextFields for matrix B
+                matrixB = new TextField[rowsB][columnsB];
+                for (int row = 0; row < rowsB; row++) {
+                    for (int col = 0; col < columnsB; col++) {
+                        TextField textField = new TextField();
+                        textField.setPromptText("Matrix B[" + row + "][" + col + "]");
+                        matrixBGridPane.add(textField, col, row);
+                        matrixB[row][col] = textField;
+                    }
+                }
+                break;
+            } 
+            catch (NumberFormatException e) {
+                resultLabel.setText("Error: Invalid input");
+            }
         }
     }
 
@@ -96,17 +112,27 @@ public class multiplyMatrix {
     @FXML
     private void multiplyMatrices(){
         try{
-            int rows = Integer.parseInt(matrixRow.getText());
-            int columns = Integer.parseInt(matrixColumn.getText());
+            int rowsA = Integer.parseInt(matrixRowA.getText());
+            int columnsA = Integer.parseInt(matrixColumnA.getText());
             
-            int[][] matA = new int[rows][columns];
-            int[][] matB = new int[rows][columns];
-            for (int row = 0; row < rows; row++) {
-                for (int col = 0; col < columns; col++) {
+            int rowsB = Integer.parseInt(matrixRowB.getText());
+            int columnsB = Integer.parseInt(matrixColumnB.getText());
+            
+            int[][] matA = new int[rowsA][columnsA];
+            int[][] matB = new int[rowsB][columnsB];
+            
+            for (int row = 0; row < rowsA; row++) {
+                for (int col = 0; col < columnsA; col++) {
                     int valueA = Integer.parseInt(matrixA[row][col].getText());
-                    int valueB = Integer.parseInt(matrixB[row][col].getText());
 
                     matA[row][col] = valueA;
+                }
+            }
+            
+            for (int row = 0; row < rowsB; row++) {
+                for (int col = 0; col < columnsB; col++) {
+                    int valueB = Integer.parseInt(matrixB[row][col].getText());
+
                     matB[row][col] = valueB;
                 }
             }

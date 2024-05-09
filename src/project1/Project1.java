@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author ACER-NITRO
+ * @author ACER-NITRO^
  */
 public class Project1 extends Application {
     

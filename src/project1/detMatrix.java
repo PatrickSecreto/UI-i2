@@ -39,25 +39,33 @@ public class detMatrix {
     
     @FXML
     private void getMatrix() {
-        try {
-            int size = Integer.parseInt(matrixSize.getText());
-            
-            // Clear previous matrix input
-            matrixGridPane.getChildren().clear();
+        while (true){
+            try {
+                int size = Integer.parseInt(matrixSize.getText());
 
-            // Create TextFields for matrix A
-            matrix = new TextField[size][size];
-            for (int row = 0; row < size; row++) {
-                for (int col = 0; col < size; col++) {
-                    TextField textField = new TextField();
-                    textField.setPromptText("Matrix A[" + row + "][" + col + "]");
-                    matrixGridPane.add(textField, col, row);
-                    matrix[row][col] = textField;
+                if (size >=4){
+                    resultLabel.setText("Error: The calculator can only handle 1x1, 2x2, and 3x3.");
+                    break;
                 }
+
+                // Clear previous matrix input
+                matrixGridPane.getChildren().clear();
+
+                // Create TextFields for matrix A
+                matrix = new TextField[size][size];
+                for (int row = 0; row < size; row++) {
+                    for (int col = 0; col < size; col++) {
+                        TextField textField = new TextField();
+                        textField.setPromptText("Matrix A[" + row + "][" + col + "]");
+                        matrixGridPane.add(textField, col, row);
+                        matrix[row][col] = textField;
+                    }
+                }
+                break;
+            } 
+            catch (NumberFormatException e) {
+                resultLabel.setText("Error: Invalid input");
             }
-        } 
-        catch (NumberFormatException e) {
-            resultLabel.setText("Error: Invalid input");
         }
     }
     
