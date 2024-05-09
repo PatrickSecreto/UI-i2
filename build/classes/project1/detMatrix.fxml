@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project1.detMatrix">
+   <children>
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToScene2" text="Back" />
+      <Label layoutX="47.0" layoutY="14.0" text="Determinant of a Matrix">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="108.0" text="Size:" />
+      <TextField fx:id="matrixSize" layoutX="75.0" layoutY="104.0" prefHeight="26.0" prefWidth="24.0" />
+      <GridPane fx:id="matrixGridPane" layoutX="251.0" layoutY="92.0" prefHeight="124.0" prefWidth="247.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <Button layoutX="161.0" layoutY="113.0" mnemonicParsing="false" onAction="#getMatrix" text="Submit" />
+      <Button layoutX="155.0" layoutY="296.0" mnemonicParsing="false" onAction="#detMatrices" text="Calculate" />
+      <Label fx:id="resultLabel" layoutX="251.0" layoutY="247.0" />
+   </children>
+</AnchorPane>

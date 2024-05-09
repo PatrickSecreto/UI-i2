@@ -5,20 +5,18 @@
 package project1;
 
 import java.io.IOException;
-import java.util.Random;
-import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import finaloop.AddSubtractMultiplyMatrices;
 
 /**
  *
@@ -28,58 +26,106 @@ public class addMatrix {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private TextField[][] matrixA;
+    private TextField[][] matrixB;
+
+    @FXML
+    private TextField matrixRow;
     
     @FXML
-    private TextField myRow;
+    private TextField matrixColumn;
+
     @FXML
-    private TextField myColumn;
+    private GridPane matrixAGridPane;
+
     @FXML
-    private GridPane gridPane;
-    @FXML
-    private Button myButton;
-    @FXML
-    private Label myResult; 
+    private GridPane matrixBGridPane;
     
+    @FXML
+    private Label resultLabel;
+
+    @FXML
+    private void getMatrices() {
+        try {
+            int rows = Integer.parseInt(matrixRow.getText());
+            int columns = Integer.parseInt(matrixColumn.getText());
+            
+            // Clear previous matrix input
+            matrixAGridPane.getChildren().clear();
+            matrixBGridPane.getChildren().clear();
+
+            // Create TextFields for matrix A
+            matrixA = new TextField[rows][columns];
+            for (int row = 0; row < rows; row++) {
+                for (int col = 0; col < columns; col++) {
+                    TextField textField = new TextField();
+                    textField.setPromptText("Matrix A[" + row + "][" + col + "]");
+                    matrixAGridPane.add(textField, col, row);
+                    matrixA[row][col] = textField;
+                }
+            }
+
+            // Create TextFields for matrix B
+            matrixB = new TextField[rows][columns];
+            for (int row = 0; row < rows; row++) {
+                for (int col = 0; col < columns; col++) {
+                    TextField textField = new TextField();
+                    textField.setPromptText("Matrix B[" + row + "][" + col + "]");
+                    matrixBGridPane.add(textField, col, row);
+                    matrixB[row][col] = textField;
+                }
+            }
+
+        } 
+        catch (NumberFormatException e) {
+            resultLabel.setText("Error: Invalid input");
+        }
+    }
+
+    private void displayResult(int[][] result) {
+        StringBuilder resultText = new StringBuilder("Result:\n");
+        for (int[] row : result) {
+            for (int value : row) {
+                resultText.append(value).append("\t");
+            }
+            resultText.append("\n");
+        }
+        resultLabel.setText(resultText.toString());
+    }
     
-    private int [][] matrix;
-    private TextField[][] textFieldMatrix;
-    
-    int rows, columns;
-    Scanner scanner = new Scanner(System.in);
+    @FXML
+    private void addMatrices(){
+        try{
+            int rows = Integer.parseInt(matrixRow.getText());
+            int columns = Integer.parseInt(matrixColumn.getText());
+            
+            int[][] matA = new int[rows][columns];
+            int[][] matB = new int[rows][columns];
+            for (int row = 0; row < rows; row++) {
+                for (int col = 0; col < columns; col++) {
+                    int valueA = Integer.parseInt(matrixA[row][col].getText());
+                    int valueB = Integer.parseInt(matrixB[row][col].getText());
+
+                    matA[row][col] = valueA;
+                    matB[row][col] = valueB;
+                }
+            }
+            AddSubtractMultiplyMatrices MatrixAdd = new AddSubtractMultiplyMatrices();
+            int[][] result = MatrixAdd.addMatrices(matA, matB);
+            // Display the result
+            displayResult(result);
+        }catch(Exception e){
+            resultLabel.setText("Error: Lack of inputs.");
+        }
+    }
     
     public void switchToAddSubtractMultiply(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("AddSubtractMatrices.fxml"));
+        root = FXMLLoader.load(getClass().getResource("AddSubtractMatrices.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     
-    public void submitRowsAndColumns(ActionEvent event){
-        try{
-            rows = Integer.parseInt(myRow.getText());
-            columns = Integer.parseInt(myColumn.getText());
-            
-            matrix = new int[rows][columns];
-            textFieldMatrix = new TextField[rows][columns];
-            
-            gridPane.getChildren().removeAll(textFieldMatrix);
-            
-            for (int row = 0; row < rows; row++){
-                for (int col = 0; col < columns; col++){
-                    TextField textField = new TextField();
-                    textField.setPromptText("Enter value at position [" + (row + 1) + "][" + (col + 1) + "]: ");
-                    textFieldMatrix[row][col] = textField;
-                    gridPane.add(textField, col, row + 2);
-                }
-            }
-            
-        }catch(NumberFormatException e){
-            myResult.setText("ERROR: Please enter a valid integer.");
-        }
-        catch(Exception e){
-            myResult.setText("ERROR: Please enter a valid integer.");
-        } 
-    }
     
 }

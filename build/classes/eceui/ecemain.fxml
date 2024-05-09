@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eceui.SceneController">
+   <children>
+      <Button layoutX="14.0" layoutY="329.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="38.0" prefWidth="97.0" text="Back" />
+      <Button layoutX="14.0" layoutY="72.0" mnemonicParsing="false" onAction="#switchToBasicCircuitries" prefHeight="241.0" prefWidth="276.0" text="Basic Circuitries" />
+      <Button layoutX="304.0" layoutY="72.0" mnemonicParsing="false" prefHeight="241.0" prefWidth="282.0" text="Diode Application" />
+      <Label alignment="TOP_CENTER" layoutX="80.0" layoutY="26.0" prefHeight="32.0" prefWidth="434.0" text="What Lessons you want to learn in ECE? ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

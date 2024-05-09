@@ -14,6 +14,6 @@
       </Label>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#switchToHome" text="Back to Home" />
       <Button layoutX="52.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchToAddSubtractMultiply" text="Add, Subtract, or Multiply Matrices" />
-      <Button layoutX="397.0" layoutY="187.0" mnemonicParsing="false" text="Determinants of Matrices" />
+      <Button layoutX="397.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchToDeterminant" text="Determinants of Matrices" />
    </children>
 </AnchorPane>
