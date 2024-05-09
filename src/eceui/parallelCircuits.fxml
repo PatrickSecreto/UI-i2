@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eceui.SceneController">
+   <children>
+      <Button alignment="CENTER" layoutX="25.0" layoutY="83.0" mnemonicParsing="false" onAction="#openCalculateVoltageInstructions" prefHeight="26.0" prefWidth="550.0" text="How to Calculate Voltage? " />
+      <Button alignment="CENTER" layoutX="25.0" layoutY="120.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="550.0" text="How to calculate Current?" />
+      <Button alignment="CENTER" layoutX="25.0" layoutY="157.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="550.0" text="How to calculate Resistance of each resistor?" />
+      <Button alignment="CENTER" layoutX="25.0" layoutY="193.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="550.0" text="Calculator for Parallel Circuits" />
+      <Button alignment="CENTER" layoutX="25.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchToBasicCircuitries" prefHeight="26.0" prefWidth="550.0" text="Back" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="33.0" text="What do you want to learn about parallel circuits?">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

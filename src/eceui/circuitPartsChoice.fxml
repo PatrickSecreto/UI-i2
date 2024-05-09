@@ -7,13 +7,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eceui.SceneController">
    <children>
-      <Button contentDisplay="CENTER" layoutX="27.0" layoutY="76.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="547.0" text="Breadboard" />
-      <Button layoutX="27.0" layoutY="110.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="547.0" text="Resistors" />
-      <Button layoutX="27.0" layoutY="145.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="547.0" text="Capacitors" />
-      <Button layoutX="27.0" layoutY="179.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="547.0" text="Transistors (PNP, NPN)" />
-      <Button layoutX="27.0" layoutY="213.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="547.0" text="Diodes (LED, Sensors, etc.)" />
-      <Button layoutX="27.0" layoutY="248.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="547.0" text="Jumper Wires" />
-      <Button layoutX="27.0" layoutY="282.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="547.0" text="Inductors" />
+      <Button contentDisplay="CENTER" layoutX="27.0" layoutY="76.0" mnemonicParsing="false" onAction="#openBreadBoardInstruction" prefHeight="27.0" prefWidth="547.0" text="Breadboard" />
+      <Button layoutX="27.0" layoutY="110.0" mnemonicParsing="false" onAction="#openResistorsInstruction" prefHeight="27.0" prefWidth="547.0" text="Resistors" />
+      <Button layoutX="27.0" layoutY="145.0" mnemonicParsing="false" onAction="#openCapacitorInstruction" prefHeight="27.0" prefWidth="547.0" text="Capacitors" />
+      <Button layoutX="27.0" layoutY="179.0" mnemonicParsing="false" onAction="#openTransistorInstruction" prefHeight="27.0" prefWidth="547.0" text="Transistors (PNP, NPN)" />
+      <Button layoutX="27.0" layoutY="213.0" mnemonicParsing="false" onAction="#openDiodeInstruction" prefHeight="27.0" prefWidth="547.0" text="Diodes (LED, Sensors, etc.)" />
+      <Button layoutX="27.0" layoutY="248.0" mnemonicParsing="false" onAction="#openJumperWireInstruction" prefHeight="27.0" prefWidth="547.0" text="Jumper Wires" />
+      <Button layoutX="27.0" layoutY="282.0" mnemonicParsing="false" onAction="#openInductorInstructions" prefHeight="27.0" prefWidth="547.0" text="Inductors" />
       <Button layoutX="27.0" layoutY="344.0" mnemonicParsing="false" onAction="#switchToBasicCircuitries" prefHeight="27.0" prefWidth="547.0" text="Back" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="121.0" layoutY="32.0" text="What part of circuits do you want to learn?">
          <font>
