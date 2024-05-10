@@ -38,7 +38,7 @@ public class SceneController {
     }
     
     public void switchToScene3(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("scene3.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/numeth_ui/Bracketing.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
