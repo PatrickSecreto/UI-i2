@@ -97,7 +97,7 @@ public class SceneController implements Initializable {
 
     
         @FXML
-    void FalsePositive(ActionEvent event) throws IOException {
+    void FalsePosition(ActionEvent event) throws IOException {
         // Get input values from UI
         String equation_input = equationInput.getText();
         double xl_input = Double.parseDouble(xlInput.getText());

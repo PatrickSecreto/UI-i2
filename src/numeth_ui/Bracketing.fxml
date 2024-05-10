@@ -11,7 +11,7 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="numeth_ui.SceneController">
    <children>
       <Button fx:id="BisectionButton" layoutX="18.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bisection" prefHeight="26.0" prefWidth="221.0" text="Bisection Mehod" />
-      <Button layoutX="19.0" layoutY="297.0" mnemonicParsing="false" onAction="#FalsePositive" prefHeight="26.0" prefWidth="222.0" text="False Position Method">
+      <Button layoutX="19.0" layoutY="297.0" mnemonicParsing="false" onAction="#FalsePosition" prefHeight="26.0" prefWidth="222.0" text="False Position Method">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></Button>

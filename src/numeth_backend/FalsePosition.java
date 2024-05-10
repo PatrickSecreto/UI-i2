@@ -72,6 +72,7 @@ public class FalsePosition {
 
             // Update previousXm for the next iteration
             previousXm = xm;
+            globalXM = xm;
             
             iteration++;
         } while (true);
