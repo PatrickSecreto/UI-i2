@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="numeth_ui.SceneController">
+   <children>
+      <Button fx:id="BisectionButton" layoutX="18.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bisection" prefHeight="26.0" prefWidth="221.0" text="Bisection Mehod" />
+      <Button layoutX="19.0" layoutY="297.0" mnemonicParsing="false" onAction="#FalsePositive" prefHeight="26.0" prefWidth="222.0" text="False Position Method">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></Button>
+      <Label layoutX="13.0" layoutY="44.0" text="Equation In Terms of X:" />
+      <Label layoutX="13.0" layoutY="104.0" text="Lower Bound:" />
+      <Label layoutX="130.0" layoutY="104.0" text="Upper Bound:" />
+      <Label layoutX="12.0" layoutY="139.0" text="Approximate Error Percentage:" />
+      <TextField fx:id="equationInput" layoutX="12.0" layoutY="62.0" prefHeight="26.0" prefWidth="228.0" />
+      <TextField layoutX="91.0" layoutY="99.0" prefHeight="26.0" prefWidth="33.0" fx:id="xlInput" />
+      <TextField fx:id="EaInput" layoutX="182.0" layoutY="134.0" prefHeight="26.0" prefWidth="57.0" />
+      <TableView fx:id="BracketTable" layoutX="257.0" layoutY="44.0" prefHeight="327.0" prefWidth="320.0">
+        <columns>
+          <TableColumn fx:id="i" prefWidth="40" text="iteration" />
+          <TableColumn prefWidth="40" text="xl" fx:id="xl" />
+          <TableColumn prefWidth="40" text="xm" fx:id="xm" />
+          <TableColumn prefWidth="40" text="xu" fx:id="xu" />
+          <TableColumn fx:id="fxl" prefWidth="40" text="f(xl)" />
+          <TableColumn fx:id="fxm" prefWidth="40" text="f(xm)" />
+          <TableColumn fx:id="fxu" prefWidth="40" text="f(xu)" />
+          <TableColumn fx:id="approximateError" prefWidth="40" text="Ea%" />
+        </columns>
+      </TableView>
+      <TextField layoutX="206.0" layoutY="99.0" prefHeight="26.0" prefWidth="33.0" fx:id="xuInput" />
+      <Label fx:id="rootLabel" layoutX="25.0" layoutY="344.0" prefHeight="18.0" prefWidth="222.0" text="Estimated Root:" />
+   </children>
+</AnchorPane>

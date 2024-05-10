@@ -14,9 +14,6 @@ public class Bisection {
     public static double globalXM;
     public static ObservableList<BracketingResult> bisectionMethod(String equation, double xl, double xu, double Ea_percentage) {
         ObservableList<BracketingResult> results = FXCollections.observableArrayList();
-
-
-        System.out.println("This is called");
         
         double root = 0;
         int iteration = 1;
